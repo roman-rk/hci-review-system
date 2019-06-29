@@ -9,17 +9,17 @@ app = Flask(__name__)
 def make_answer(polarity):
     if polarity > 0.0:
         answer = {
-            '1': ("Thank you for your feedback! Have a nice day!", "😊"),
-            '2': ("We are glad that you liked everything! Thank you!", "🤩"),
-            '3': ("Thank you so much for your review! We will be waiting to see you again!", "😍")
+            '1': ( "Thank you for your feedback! Have a nice day!", ("Thank you", "Спасибо", "Grazie", "ありがとう", "Gracias", "Merci", "Danke")),
+            '2': ("We are glad that you liked everything! Thank you!",("Thank you", "Спасибо", "Grazie", "ありがとう", "Gracias", "Merci", "Danke")),
+            '3': ("Thank you so much for your review! We will be waiting to see you again!",("Thank you", "Спасибо", "Grazie", "ありがとう", "Gracias", "Merci", "Danke"))
         }[str(randint(1,3))]
         print(answer)
         return answer
     else:
         answer = {
-            '1': ("****", "🤬"),
-            '2': ("Sorry to hear that! We will notify administator and take action. Thank you for your feedback!", "😔"),
-            '3': ("We are constantly improving and your feedback will help us to become better. Thank you so much!", "😟")
+            '1': ("****", ("We are sorry", "Нам жаль", "Siamo spiacenti", "申し訳ありません","Lo sentimos", "Pardon", "Es tut mir Leid")),
+            '2': ("Sorry to hear that! We will notify administator and take action. Thank you for your feedback!", ("We are sorry", "Нам жаль", "Siamo spiacenti", "申し訳ありません","Lo sentimos", "Pardon", "Es tut mir Leid")),
+            '3': ("We are constantly improving and your feedback will help us to become better. Thank you so much!", ("We are sorry", "Нам жаль", "Siamo spiacenti", "申し訳ありません","Lo sentimos", "Pardon", "Es tut mir Leid"))
         }[str(randint(2,3))]
         print(answer)
         return answer
